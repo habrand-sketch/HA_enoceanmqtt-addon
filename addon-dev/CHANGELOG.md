@@ -1,3 +1,7 @@
+## 0.1.28-4
+
+Python 3.14 (meegeleverd met de nieuwste Alpine) heeft setuptools niet meer standaard. Het oude python3 setup.py develop werkt daardoor niet meer. Added dependency 
+
 ## 0.1.28-3
 
 **Quick fix for installation issue (BUILD_FROM parameter)
