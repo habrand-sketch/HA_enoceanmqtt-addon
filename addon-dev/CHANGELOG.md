@@ -1,3 +1,7 @@
+## 0.1.28-3
+
+**Quick fix for installation issue (BUILD_FROM parameter)
+
 ## 0.1.28-2
 
 **Quick fix for installation issue reported in mak-gitdev/ha_enoceanmqtt#122**
