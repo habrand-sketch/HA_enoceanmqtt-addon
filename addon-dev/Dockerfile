@@ -6,7 +6,7 @@ ARG BUILD_VERSION
 WORKDIR /app
 
 # Install enoceanmqtt and requirements
-RUN apk add --no-cache python3 py3-pip git && \
+RUN apk add --no-cache python3 py3-pip py3-setuptools git && \
     python3 -m venv /app/venv && \
     . /app/venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
@@ -15,7 +15,7 @@ RUN apk add --no-cache python3 py3-pip git && \
     pip3 install paho-mqtt==1.6.1 && \
     pip3 install git+https://github.com/mak-gitdev/enocean.git && \
     git clone -b master --single-branch --depth 1 https://github.com/embyt/enocean-mqtt.git && \
-    cd enocean-mqtt && python3 setup.py develop && cd .. && \
+    cd enocean-mqtt && pip install -e . && cd .. && \
     if [ "${BUILD_VERSION}" = "head" ]; then \
         echo "Installing from repository head" && \
         git clone -b develop --single-branch --depth 1 https://github.com/mak-gitdev/HA_enoceanmqtt.git ; \
